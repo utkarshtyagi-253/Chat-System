@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat App</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #ece5dd;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 25%;
+            background: #075e54;
+            color: white;
+            padding: 15px;
+        }
+
+        .sidebar input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .sidebar button {
+            width: 100%;
+            padding: 10px;
+            background: #25d366;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Chat Area */
+        .chat-area {
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-header {
+            background: #075e54;
+            color: white;
+            padding: 15px;
+        }
+
+        #chat {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message {
+            max-width: 60%;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 10px;
+        }
+
+        .sent {
+            background: #dcf8c6;
+            align-self: flex-end;
+        }
+
+        .received {
+            background: white;
+            align-self: flex-start;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            background: #f0f0f0;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .chat-input button {
+            margin-left: 10px;
+            padding: 10px;
+            background: #075e54;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #typing {
+            font-size: 12px;
+            color: gray;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>Connect</h3>
+        <input id="username" placeholder="Your name">
+        <input id="receiver" placeholder="Send to">
+        <button onclick="connect()">Connect</button>
+
+        <h4>Online Users</h4>
+        <div id="users"></div>
+    </div>
+
+    <!-- Chat -->
+    <div class="chat-area">
+
+        <div class="chat-header">
+            Chat Room
+        </div>
+
+        <div id="chat"></div>
+
+        <div id="typing"></div>
+
+        <div class="chat-input">
+            <input id="message" placeholder="Type a message">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
